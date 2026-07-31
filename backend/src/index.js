@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { checkDbConnection } from './config/db.js';
 import { seedAdminUser } from './config/seedAdmin.js';
+import authRoutes from './routes/authRoutes.js'; // <-- Import the auth routes
 
 dotenv.config();
 
@@ -12,6 +13,9 @@ const PORT = process.env.PORT || 5000;
 // Middlewares
 app.use(cors());
 app.use(express.json());
+
+// Routes
+app.use('/api/auth', authRoutes); // <-- Use the auth routes
 
 // Test Route
 app.get('/', (req, res) => {
