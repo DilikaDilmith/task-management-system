@@ -3,7 +3,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { checkDbConnection } from './config/db.js';
 import { seedAdminUser } from './config/seedAdmin.js';
-import authRoutes from './routes/authRoutes.js'; // <-- Import the auth routes
+import authRoutes from './routes/authRoutes.js';
+import taskRoutes from './routes/taskRoutes.js'; // <-- Import Task Routes
 
 dotenv.config();
 
@@ -15,7 +16,8 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use('/api/auth', authRoutes); // <-- Use the auth routes
+app.use('/api/auth', authRoutes);
+app.use('/api/tasks', taskRoutes); // <-- Use Task Routes
 
 // Test Route
 app.get('/', (req, res) => {
