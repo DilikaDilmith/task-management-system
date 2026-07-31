@@ -85,9 +85,60 @@ This application provides an end-to-end task management interface designed to bo
 Create a `.env` file in the `backend/` directory based on the following template[cite: 1]:
 
 ```env
+
 PORT=5000
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=your_mysql_password
 DB_NAME=task_management_db
-JWT_SECRET=super_secret_jwt_key_12345
+JWT_SECRET=super_secret_jwt_key_12345 ```
+
+```
+---
+## 🚀 Installation & Setup
+Prerequisites
+Node.js (v18+) installed[cite: 1].
+
+MySQL Server installed and running locally[cite: 1].
+
+1. Database Setup
+Create a new MySQL database named task_management_db[cite: 1]:
+```
+CREATE DATABASE task_management_db;
+```
+2. Backend Setup
+```# Navigate into backend directory
+cd backend
+
+# Install dependencies
+npm install
+
+# Configure environment variables (.env file)
+# Start the backend server
+npm run dev
+```
+💡 Automatic Table & Seed Setup: The backend automatically initializes required tables (users, tasks) and seeds the default admin account on server boot[cite: 1].
+3. Frontend Setup
+```
+# Navigate into frontend directory
+cd frontend
+
+# Install dependencies
+npm install
+
+# Start Vite development server
+npm run dev
+
+```
+---
+
+Visit` http://localhost:5173` in your browse
+
+---
+
+## 🔐 Default Admin Credentials
+Use these credentials to log in:
+
+Email: `admin@test.com`
+
+Password: `123456`
